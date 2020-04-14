@@ -14,11 +14,17 @@ public class MenuController {
     }
 
     public boolean ShowMenu(String clientName) {
-        System.out.println("Hello " + clientName + ", would you like to see the list of available books?");
+        System.out.println("Hello " + clientName + ". What would you like to do next?");
+        System.out.println(" 1. List of Available Books");
+
         String clientOption = scan.next();
 
-        if (clientOption.equals("yes") ) {
-            AvailableBooksList();
+        switch(clientOption) {
+            case "1":
+                AvailableBooksList();
+                break;
+            default:
+                System.out.println("Option not found");
         }
 
         return true;
