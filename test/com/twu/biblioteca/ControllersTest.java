@@ -10,7 +10,7 @@ public class ControllersTest {
 
     @Test
     public void shouldGetUserInput() {
-        String clientOptionMock = "yes";
+        String clientOptionMock = "1";
         InputStream in = new ByteArrayInputStream(clientOptionMock.getBytes());
         System.setIn(in);
 

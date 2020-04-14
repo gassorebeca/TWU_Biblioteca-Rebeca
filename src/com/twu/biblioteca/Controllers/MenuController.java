@@ -24,7 +24,7 @@ public class MenuController {
                 AvailableBooksList();
                 break;
             default:
-                System.out.println("Option not found");
+                System.out.println("Please select a valid option!");
         }
 
         return true;
