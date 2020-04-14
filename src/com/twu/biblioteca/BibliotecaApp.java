@@ -14,19 +14,9 @@ public class BibliotecaApp
         String clientName = scan.next();
 
         MenuController menuController = new MenuController();
+
         menuController.ShowMenu(clientName);
 
         scan.close();
-        GetOut();
-    }
-
-    private static void GetOut() {
-        System.out.println("Press Enter key to stop");
-        try
-        {
-            System.in.read();
-        }
-        catch(Exception e)
-        {}
     }
 }
