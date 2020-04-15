@@ -37,6 +37,9 @@ public class BookController {
                      if (book.getId() == bookId)
                          book.setAvailable(false);
                     });
+
+            System.out.println("Thank you! Enjoy the book");
+            System.out.println("---------------------------------------");
         }
         catch(Exception e)
         {
