@@ -7,28 +7,35 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class MenuController {
+    BookController bookController = new BookController();
+    BooksRepository booksRepository = new BooksRepository();
+
     Scanner scan = new Scanner(System.in);
     Boolean quit = false;
 
     public MenuController() {
-        BooksRepository booksRepository = new BooksRepository();
     }
 
     public boolean ShowMenu(String clientName) {
         do
         {
             System.out.println("Hello " + clientName + ". What would you like to do next?");
-            System.out.println(" 1. List of Available Books\n 2. Quit the Application");
+            System.out.println(" 1. List of Available Books\n " +
+                                "2. Quit the Application\n " +
+                                "3. CheckOut Book");
 
             String clientOption = scan.next();
 
             switch(clientOption) {
                 case "1":
-                    AvailableBooksList();
+                    bookController.AvailableBooksList();
                     break;
                 case "2":
                     quit = true;
                     GetOut();
+                    break;
+                case "3":
+                    chooseThBook();
                     break;
                 default:
                     System.out.println("Please select a valid option!");
@@ -38,15 +45,11 @@ public class MenuController {
         return true;
     }
 
-    private static void AvailableBooksList() {
-        System.out.println("List of available books:");
+    private void chooseThBook() {
+        System.out.println("Enter the Id of the book you want to checkout:");
+        String bookId = scan.next();
 
-        BooksRepository booksRepository = new BooksRepository();
-        ArrayList<Book> books = booksRepository.getBooks();
-
-        System.out.println("---------------------------------------");
-        books.forEach((k)->System.out.println("- " + k.getName() + " | " + k.getAuthor() + " | "+ k.getYearPublished()));
-        System.out.println("---------------------------------------");
+        bookController.checkOutBook(bookId);
     }
 
     private static void GetOut() {

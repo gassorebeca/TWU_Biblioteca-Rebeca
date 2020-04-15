@@ -1,9 +1,6 @@
 package com.twu.biblioteca.Repositories;
 
 import com.twu.biblioteca.Models.Book;
-
-import java.util.Date;
-import java.util.List;
 import java.util.ArrayList;
 
 public class BooksRepository {
@@ -17,36 +14,24 @@ public class BooksRepository {
         this.books = books;
     }
 
-    public BooksRepository()
-    {
-        try
-        {
-            Book theLordOfTheRings = new Book();
-            BookCreator(theLordOfTheRings, "The Lord of The Rings", "J. R. R. Tolkien", 1954);
+    public BooksRepository() {
+        Book theLordOfTheRings = new Book();
+        BookCreator(theLordOfTheRings, 1,"The Lord of The Rings", "J. R. R. Tolkien", 1954, true);
 
-            Book harryPotterTwo = new Book();
-            BookCreator(harryPotterTwo, "Harry Potter and the Prisoner of Azkaban", "J. K. Rowling", 1999);
+        Book harryPotterTwo = new Book();
+        BookCreator(harryPotterTwo, 2,"Harry Potter and the Prisoner of Azkaban", "J. K. Rowling", 1999, true);
 
-            Book aBriefHistoryOfTime = new Book();
-            BookCreator(aBriefHistoryOfTime, "A Brief History of Time", "Stephen Hawking", 1991);
+        Book aBriefHistoryOfTime = new Book();
+        BookCreator(aBriefHistoryOfTime, 31,"A Brief History of Time", "Stephen Hawking", 1991, true);
 
-            // ORDENAR OS LIVROS POR ORDEM ALFABETICA
-
-            books.add(theLordOfTheRings); books.add(harryPotterTwo); books.add(aBriefHistoryOfTime);
-        }
-        catch(Exception e)
-        {
-            System.out.println(e);
-        }
+        books.add(theLordOfTheRings); books.add(harryPotterTwo); books.add(aBriefHistoryOfTime);
     }
 
-    private void BookCreator(Book name, String title, String author, int yearPublished) {
+    private void BookCreator(Book name, int id, String title, String author, int yearPublished, boolean available) {
+        name.setId(id);
         name.setName(title);
         name.setAuthor(author);
         name.setYearPublished(yearPublished);
-    }
-
-    private List<Book> getAvailableBooks() {
-        return null;
+        name.setAvailable(available);
     }
 }

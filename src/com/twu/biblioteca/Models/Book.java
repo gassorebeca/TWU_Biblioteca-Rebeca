@@ -4,10 +4,15 @@ import java.util.Date;
 
 public class Book
 {
+    private int id;
     private String name;
     private String author;
     private Boolean available;
     private int YearPublished;
+
+    public int getId() { return id; }
+
+    public void setId(int id) { this.id = id; }
 
     public int getYearPublished() {
         return YearPublished;
