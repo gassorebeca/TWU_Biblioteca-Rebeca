@@ -24,7 +24,10 @@ public class BooksRepository {
         Book aBriefHistoryOfTime = new Book();
         BookCreator(aBriefHistoryOfTime, 31,"A Brief History of Time", "Stephen Hawking", 1991, true);
 
-        books.add(theLordOfTheRings); books.add(harryPotterTwo); books.add(aBriefHistoryOfTime);
+        Book buryMyHeartAtWoundedKnee = new Book();
+        BookCreator(aBriefHistoryOfTime, 32,"Bury My Heart at Wounded Knee", "Dee Brown", 1970, false);
+
+        books.add(theLordOfTheRings); books.add(harryPotterTwo); books.add(aBriefHistoryOfTime); books.add(buryMyHeartAtWoundedKnee);
     }
 
     private void BookCreator(Book name, int id, String title, String author, int yearPublished, boolean available) {

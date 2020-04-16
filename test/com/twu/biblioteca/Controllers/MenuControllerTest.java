@@ -1,11 +1,11 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.Controllers;
 
 import org.junit.Test;
 import com.twu.biblioteca.Controllers.MenuController;
 import static org.junit.Assert.*;
 import java.io.*;
 
-public class ControllersTest {
+public class MenuControllerTest {
     MenuController menuController= new MenuController();
 
     @Test

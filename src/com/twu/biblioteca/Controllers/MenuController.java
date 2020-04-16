@@ -1,20 +1,14 @@
 package com.twu.biblioteca.Controllers;
 
-import com.twu.biblioteca.Models.Book;
-import com.twu.biblioteca.Repositories.BooksRepository;
-
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class MenuController {
     BookController bookController = new BookController();
-    BooksRepository booksRepository = new BooksRepository();
 
     Scanner scan = new Scanner(System.in);
     Boolean quit = false;
 
-    public MenuController() {
-    }
+    public MenuController() { }
 
     public boolean ShowMenu(String clientName) {
         do
