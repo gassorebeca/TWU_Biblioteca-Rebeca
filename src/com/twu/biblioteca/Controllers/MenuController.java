@@ -35,7 +35,7 @@ public class MenuController {
                     GetOut();
                     break;
                 case "3":
-                    chooseThBook();
+                    ChooseThBook();
                     break;
                 default:
                     System.out.println("Please select a valid option!");
@@ -45,11 +45,14 @@ public class MenuController {
         return true;
     }
 
-    private void chooseThBook() {
+    private void ChooseThBook() {
         System.out.println("Enter the Id of the book you want to checkout:");
         String bookId = scan.next();
 
-        bookController.checkOutBook(bookId);
+        String response = bookController.CheckOutBook(bookId);
+
+        System.out.println(response);
+        System.out.println("---------------------------------------");
     }
 
     private static void GetOut() {

@@ -29,21 +29,24 @@ public class BookController {
         }
     }
 
-    public void checkOutBook(String stringBookId) {
+    public String CheckOutBook(String stringBookId) {
         try {
             int bookId = Integer.parseInt(stringBookId);
+            for (Book book: books) {
+                if (book.getId() == bookId) {
+                    book.setAvailable(false);
 
-            books.forEach(book -> {
-                     if (book.getId() == bookId)
-                         book.setAvailable(false);
-                    });
+                    return "Thank you! Enjoy the book";
+                }
+            }
 
-            System.out.println("Thank you! Enjoy the book");
-            System.out.println("---------------------------------------");
+            return "Sorry, that book is not available";
         }
         catch(Exception e)
         {
             System.out.println(e);
         }
+
+        return null;
     }
 }

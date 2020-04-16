@@ -1,7 +1,5 @@
 package com.twu.biblioteca.Models;
 
-import java.util.Date;
-
 public class Book
 {
     private int id;
