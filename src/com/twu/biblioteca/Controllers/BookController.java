@@ -36,11 +36,32 @@ public class BookController {
                 if (book.getId() == bookId) {
                     book.setAvailable(false);
 
-                    return "Thank you! Enjoy the book";
+                    return "--- Thank you! Enjoy the book ---";
                 }
             }
 
-            return "Sorry, that book is not available";
+            return "--- Sorry, that book is not available ---";
+        }
+        catch(Exception e)
+        {
+            System.out.println(e);
+        }
+
+        return null;
+    }
+
+    public String ReturnBook(String stringBookId) {
+        try {
+            int bookId = Integer.parseInt(stringBookId);
+            for (Book book: books) {
+                if (book.getId() == bookId) {
+                    book.setAvailable(true);
+
+                    return "--- Thank you for returning the book. ---";
+                }
+            }
+
+            return "--- This is not a valid book to return. ---";
         }
         catch(Exception e)
         {

@@ -21,8 +21,9 @@ public class MenuController {
         {
             System.out.println("Hello " + clientName + ". What would you like to do next?");
             System.out.println(" 1. List of Available Books\n " +
-                                "2. Quit the Application\n " +
-                                "3. CheckOut Book");
+                                "2. CheckOut Book\n " +
+                                "3. Return a book\n " +
+                                "4. Quit the Application");
 
             String clientOption = scan.next();
 
@@ -31,11 +32,14 @@ public class MenuController {
                     bookController.AvailableBooksList();
                     break;
                 case "2":
-                    quit = true;
-                    GetOut();
+                    ChooseTheBookToCheckOut();
                     break;
                 case "3":
-                    ChooseThBook();
+                    ChooseTheBookToReturn();
+                    break;
+                case "4":
+                    quit = true;
+                    GetOut();
                     break;
                 default:
                     System.out.println("Please select a valid option!");
@@ -45,11 +49,21 @@ public class MenuController {
         return true;
     }
 
-    private void ChooseThBook() {
+    private void ChooseTheBookToCheckOut() {
         System.out.println("Enter the Id of the book you want to checkout:");
         String bookId = scan.next();
 
         String response = bookController.CheckOutBook(bookId);
+
+        System.out.println(response);
+        System.out.println("---------------------------------------");
+    }
+
+    private void ChooseTheBookToReturn() {
+        System.out.println("Enter the Id of the book you want to return:");
+        String bookId = scan.next();
+
+        String response = bookController.ReturnBook(bookId);
 
         System.out.println(response);
         System.out.println("---------------------------------------");
