@@ -22,10 +22,10 @@ public class BooksRepository {
         BookCreator(harryPotterTwo, 2,"Harry Potter and the Prisoner of Azkaban", "J. K. Rowling", 1999, true);
 
         Book aBriefHistoryOfTime = new Book();
-        BookCreator(aBriefHistoryOfTime, 31,"A Brief History of Time", "Stephen Hawking", 1991, true);
+        BookCreator(aBriefHistoryOfTime, 3,"A Brief History of Time", "Stephen Hawking", 1991, true);
 
         Book buryMyHeartAtWoundedKnee = new Book();
-        BookCreator(aBriefHistoryOfTime, 32,"Bury My Heart at Wounded Knee", "Dee Brown", 1970, false);
+        BookCreator(buryMyHeartAtWoundedKnee, 4,"Bury My Heart at Wounded Knee", "Dee Brown", 1970, false);
 
         books.add(theLordOfTheRings); books.add(harryPotterTwo); books.add(aBriefHistoryOfTime); books.add(buryMyHeartAtWoundedKnee);
     }

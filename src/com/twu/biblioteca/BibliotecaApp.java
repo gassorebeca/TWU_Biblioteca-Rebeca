@@ -7,14 +7,17 @@ public class BibliotecaApp
 {
     public static void main(String[] args)
     {
-        System.out.println("Welcome to Biblioteca. Your one-stop-shop for great book titles in Bangalore!");
-        System.out.println("What is your name?");
         Scanner scan = new Scanner(System.in);
-        String clientName = scan.next();
-
         MenuController menuController = new MenuController();
 
-        menuController.ShowMenu(clientName);
+        System.out.println("Welcome to Biblioteca. Your one-stop-shop for great book titles in Bangalore!");
+        System.out.println("What is your name?");
+        String clientName = scan.next();
+
+        System.out.println("Do you wanna see the list of books or movies?\n 1- Books\n 2- Movies\nEnter the number of your option:");
+        String movieOrBook = scan.next();
+
+        menuController.ShowMenu(clientName, movieOrBook);
 
         scan.close();
     }

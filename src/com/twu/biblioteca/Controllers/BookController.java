@@ -15,6 +15,7 @@ public class BookController {
             System.out.println("List of available books:");
 
             System.out.println("---------------------------------------");
+            System.out.println("| ID | Book name | Author | Year Published |");
             books.forEach(
                     book -> {
                         if(book.getAvailable())

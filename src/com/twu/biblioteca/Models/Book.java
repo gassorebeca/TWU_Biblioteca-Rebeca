@@ -1,16 +1,43 @@
 package com.twu.biblioteca.Models;
 
-public class Book
-{
-    private int id;
-    private String name;
-    private String author;
-    private Boolean available;
+public class Book {
+    private int Id;
+    private String Name;
+    private String Author;
+    private Boolean Available;
     private int YearPublished;
 
-    public int getId() { return id; }
+    public int getId() {
+        return Id;
+    }
 
-    public void setId(int id) { this.id = id; }
+    public void setId(int id) {
+        Id = id;
+    }
+
+    public String getName() {
+        return Name;
+    }
+
+    public void setName(String name) {
+        Name = name;
+    }
+
+    public String getAuthor() {
+        return Author;
+    }
+
+    public void setAuthor(String author) {
+        Author = author;
+    }
+
+    public Boolean getAvailable() {
+        return Available;
+    }
+
+    public void setAvailable(Boolean available) {
+        Available = available;
+    }
 
     public int getYearPublished() {
         return YearPublished;
@@ -18,29 +45,5 @@ public class Book
 
     public void setYearPublished(int yearPublished) {
         YearPublished = yearPublished;
-    }
-
-    public Boolean getAvailable() {
-        return available;
-    }
-
-    public void setAvailable(Boolean available) {
-        this.available = available;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
     }
 }

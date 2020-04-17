@@ -7,10 +7,16 @@ public class MenuController {
 
     Scanner scan = new Scanner(System.in);
     Boolean quit = false;
+    String book = "1";
 
     public MenuController() { }
 
-    public boolean ShowMenu(String clientName) {
+    public void ShowMenu(String clientName, String movieOrBook) {
+        if(movieOrBook.equals(book))
+            ShowBookMenu(clientName);
+    }
+
+    private void ShowBookMenu(String clientName) {
         do
         {
             System.out.println("Hello " + clientName + ". What would you like to do next?");
@@ -39,8 +45,6 @@ public class MenuController {
                     System.out.println("Please select a valid option!");
             }
         } while(!quit);
-
-        return true;
     }
 
     private void ChooseTheBookToCheckOut() {
