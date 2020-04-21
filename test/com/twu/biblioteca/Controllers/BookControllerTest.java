@@ -37,7 +37,7 @@ public class BookControllerTest {
         String responseMock = "--- Thank you for returning the book. ---";
 
         // when
-        String response = bookController.ReturnBook("32");
+        String response = bookController.ReturnBook("4");
 
         // then
         assertEquals(responseMock, response);
