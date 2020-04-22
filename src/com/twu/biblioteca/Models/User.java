@@ -9,6 +9,11 @@ public class User {
     private ArrayList<Book> BooksCheckedOut;
     private ArrayList<Movie> MoviesCheckedOut;
 
+    public User() {
+        BooksCheckedOut = new ArrayList<Book>();
+        MoviesCheckedOut = new ArrayList<Movie>();
+    }
+
     public ArrayList<Book> getBooksCheckedOut() { return BooksCheckedOut; }
 
     public void setBooksCheckedOut(ArrayList<Book> booksCheckedOut) { BooksCheckedOut = booksCheckedOut; }
@@ -40,4 +45,12 @@ public class User {
     public void setPassword(String password) {
         Password = password;
     }
+
+    public void addBookToBooks(Book book) { BooksCheckedOut.add(book); }
+
+    public void removeBookFromBooks(Book book) { BooksCheckedOut.remove(book); }
+
+    public void addMovieToMovies(Movie movie) { MoviesCheckedOut.add(movie); }
+
+    public void removeMovieFromMovies(Movie movie) { MoviesCheckedOut.remove(movie); }
 }

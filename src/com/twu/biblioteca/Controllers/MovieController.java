@@ -1,7 +1,6 @@
 package com.twu.biblioteca.Controllers;
 
-import com.twu.biblioteca.Models.Book;
-import com.twu.biblioteca.Models.Movie;
+import com.twu.biblioteca.Models.*;
 import com.twu.biblioteca.Repositories.MoviesRepository;
 import java.util.ArrayList;
 
@@ -30,12 +29,13 @@ public class MovieController {
         }
     }
 
-    public String CheckOutMovie(String stringMovieId) {
+    public String CheckOutMovie(String stringMovieId, User user) {
         try {
             int movieId = Integer.parseInt(stringMovieId);
             for (Movie movie: movies) {
                 if (movie.getId() == movieId && movie.getAvailable() == true) {
                     movie.setAvailable(false);
+                    user.addMovieToMovies(movie);
 
                     return "--- Thank you! Enjoy the movie ---";
                 }
@@ -51,12 +51,13 @@ public class MovieController {
         return null;
     }
 
-    public String ReturnMovie(String stringMovieId) {
+    public String ReturnMovie(String stringMovieId, User user) {
         try {
             int bookId = Integer.parseInt(stringMovieId);
             for (Movie movie: movies) {
                 if (movie.getId() == bookId && movie.getAvailable() == false) {
                     movie.setAvailable(true);
+                    user.removeMovieFromMovies(movie);
 
                     return "--- Thank you for returning the movie. ---";
                 }

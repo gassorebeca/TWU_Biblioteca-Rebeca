@@ -93,13 +93,13 @@ public class MenuController {
 
     private void CheckOut(String movieOrBook) {
         System.out.println("Enter the Id of the " + movieOrBook + " you want to checkout:");
-        String id = scan.next();
+        String movieOrBookId = scan.next();
         String response;
 
         if (movieOrBook.equals(book))
-            response = bookController.CheckOutBook(id);
+            response = bookController.CheckOutBook(movieOrBookId, user);
         else
-            response = movieController.CheckOutMovie(id);
+            response = movieController.CheckOutMovie(movieOrBookId, user);
 
         System.out.println(response);
         System.out.println("---------------------------------------");
@@ -107,13 +107,13 @@ public class MenuController {
 
     private void Return(String movieOrBook) {
         System.out.println("Enter the Id of the " + movieOrBook + " you want to return:");
-        String id = scan.next();
+        String movieOrBookId = scan.next();
         String response;
 
         if (movieOrBook.equals(book))
-            response = bookController.ReturnBook(id);
+            response = bookController.ReturnBook(movieOrBookId, user);
         else
-            response = movieController.ReturnMovie(id);
+            response = movieController.ReturnMovie(movieOrBookId, user);
 
         System.out.println(response);
         System.out.println("---------------------------------------");

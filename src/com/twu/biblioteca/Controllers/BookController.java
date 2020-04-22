@@ -1,6 +1,6 @@
 package com.twu.biblioteca.Controllers;
 
-import com.twu.biblioteca.Models.Book;
+import com.twu.biblioteca.Models.*;
 import com.twu.biblioteca.Repositories.BooksRepository;
 import java.util.ArrayList;
 
@@ -29,12 +29,13 @@ public class BookController {
         }
     }
 
-    public String CheckOutBook(String stringBookId) {
+    public String CheckOutBook(String stringBookId, User user) {
         try {
             int bookId = Integer.parseInt(stringBookId);
             for (Book book: books) {
                 if (book.getId() == bookId && book.getAvailable() == true) {
                     book.setAvailable(false);
+                    user.addBookToBooks(book);
 
                     return "--- Thank you! Enjoy the book ---";
                 }
@@ -50,12 +51,13 @@ public class BookController {
         return null;
     }
 
-    public String ReturnBook(String stringBookId) {
+    public String ReturnBook(String stringBookId, User user) {
         try {
             int bookId = Integer.parseInt(stringBookId);
             for (Book book: books) {
                 if (book.getId() == bookId && book.getAvailable() == false) {
                     book.setAvailable(true);
+                    user.removeBookFromBooks(book);
 
                     return "--- Thank you for returning the book. ---";
                 }
