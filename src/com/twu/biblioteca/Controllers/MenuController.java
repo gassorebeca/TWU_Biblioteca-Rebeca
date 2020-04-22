@@ -29,7 +29,16 @@ public class MenuController {
     }
     private void ShowMyInformation(){
         System.out.println("------------- My Information ---------------");
-        System.out.println("Name: " + user.getName() +"\nE-mail: "  + user.getEmail() + "\nPhone Number: " + user.getPhoneNumber());
+        System.out.println("Name: " + user.getName() +"\nE-mail: "  + user.getEmail() + "\nPhone Number: " + user.getPhoneNumber() + "\n");
+
+        System.out.println("--- My Books:");
+        user.getBooksCheckedOut().forEach( bookFromMyList -> { System.out.println("- " + bookFromMyList.getName());});
+
+        System.out.println("\n");
+
+        System.out.println("--- My Movies:");
+        user.getMoviesCheckedOut().forEach( moviesFromMyList -> { System.out.println("- " + moviesFromMyList.getName());});
+
         System.out.println("---------------------------------------");
 
         ShowBookMenu(user.getName());
@@ -43,7 +52,8 @@ public class MenuController {
                     "2. CheckOut Movie\n " +
                     "3. Return a Movie\n " +
                     "4. Show Books Menu\n " +
-                    "5. Quit the Application");
+                    "5. My Information\n " +
+                    "6. Quit the Application");
             String clientOption = scan.next();
 
             switch(clientOption) {
@@ -60,6 +70,9 @@ public class MenuController {
                     ShowBookMenu(clientName);
                     break;
                 case "5":
+                    ShowMyInformation();
+                    break;
+                case "6":
                     quit = true;
                     GetOut();
                     break;
@@ -77,7 +90,8 @@ public class MenuController {
                                 "2. CheckOut Book\n " +
                                 "3. Return a book\n " +
                                 "4. Show Movies Menu\n " +
-                                "5. Quit the Application");
+                                "5. My Information\n " +
+                                "6. Quit the Application");
             String clientOption = scan.next();
 
             switch(clientOption) {
@@ -94,6 +108,9 @@ public class MenuController {
                     ShowMovieMenu(clientName);
                     break;
                 case "5":
+                    ShowMyInformation();
+                    break;
+                case "6":
                     quit = true;
                     GetOut();
                     break;
