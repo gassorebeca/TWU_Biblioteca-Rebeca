@@ -4,8 +4,10 @@ import java.util.ArrayList;
 
 public class User {
     private int LibraryNumber;
-    private String Name;
     private String Password;
+    private String Name;
+    private String Email;
+    private String phoneNumber;
     private ArrayList<Book> BooksCheckedOut;
     private ArrayList<Movie> MoviesCheckedOut;
 
@@ -45,6 +47,14 @@ public class User {
     public void setPassword(String password) {
         Password = password;
     }
+
+    public String getEmail() { return Email; }
+
+    public void setEmail(String email) { Email = email; }
+
+    public String getPhoneNumber() { return phoneNumber; }
+
+    public void setPhoneNumber(String phoneNumber) { this.phoneNumber = phoneNumber; }
 
     public void addBookToBooks(Book book) { BooksCheckedOut.add(book); }
 

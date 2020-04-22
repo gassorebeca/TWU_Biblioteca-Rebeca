@@ -12,17 +12,19 @@ public class UsersRepository {
 
     public UsersRepository() {
         User gasso = new User();
-        UserCreator(gasso, 1231234, "Rebeca Gasso", "rebeca123");
+        UserCreator(gasso, 1231234, "Rebeca Gasso", "rebeca123", "981746172", "rebeca.gasso@thougtworks.com");
 
         User test = new User();
-        UserCreator(test, 4564567, "Ana Test", "ana123");
+        UserCreator(test, 4564567, "Ana Test", "ana123", "981746172", "ana.test@thougtworks.com");
 
         users.add(gasso); users.add(test);
     }
 
-    private void UserCreator(User user, int libraryNumber, String name, String password) {
+    private void UserCreator(User user, int libraryNumber, String name, String password, String phoneNumber, String email) {
         user.setName(name);
         user.setLibraryNumber(libraryNumber);
         user.setPassword(password);
+        user.setEmail(email);
+        user.setPhoneNumber(phoneNumber);
     }
 }

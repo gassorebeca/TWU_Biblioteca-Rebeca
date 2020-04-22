@@ -21,7 +21,7 @@ public class BibliotecaApp {
             System.out.println("----- Library Number or Password incorrect! -----");
             menuController.GetOut();
         } else {
-            System.out.println("Do you wanna see the menu of books or movies?\n 1- Books\n 2- Movies\nEnter the number of your option:");
+            System.out.println("What would you like to do?\n 1- Books\n 2- Movies\n 3- My Information\nEnter the number of your option:");
             String movieOrBook = scan.next();
 
             menuController.ShowMenu(client, movieOrBook);

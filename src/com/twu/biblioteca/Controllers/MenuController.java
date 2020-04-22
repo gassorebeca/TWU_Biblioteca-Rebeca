@@ -1,6 +1,9 @@
 package com.twu.biblioteca.Controllers;
 
+import java.util.ArrayList;
 import java.util.Scanner;
+
+import com.twu.biblioteca.Models.Movie;
 import com.twu.biblioteca.Models.User;
 
 public class MenuController {
@@ -19,8 +22,17 @@ public class MenuController {
         user = client;
         if(movieOrBook.equals("1"))
             ShowBookMenu(user.getName());
-        else
+        else if(movieOrBook.equals("2"))
             ShowMovieMenu(user.getName());
+        else
+            ShowMyInformation();
+    }
+    private void ShowMyInformation(){
+        System.out.println("------------- My Information ---------------");
+        System.out.println("Name: " + user.getName() +"\nE-mail: "  + user.getEmail() + "\nPhone Number: " + user.getPhoneNumber());
+        System.out.println("---------------------------------------");
+
+        ShowBookMenu(user.getName());
     }
 
     private void ShowMovieMenu(String clientName) {
