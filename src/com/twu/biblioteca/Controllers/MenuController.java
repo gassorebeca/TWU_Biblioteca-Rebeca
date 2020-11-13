@@ -1,9 +1,6 @@
 package com.twu.biblioteca.Controllers;
 
-import java.util.ArrayList;
 import java.util.Scanner;
-
-import com.twu.biblioteca.Models.Movie;
 import com.twu.biblioteca.Models.User;
 
 public class MenuController {

@@ -1,29 +1,14 @@
-Instructions to push your code to code.google.com
-=================================================
-1. Sign into GitHub and create a new repository
-        Repository name: twu-biblioteca-yourname
-        Privacy level: Public
-        Don't check "Initialize this repository with a README"
-        Add .gitignore: None
-        Add a license: Apache License 2.0
+ThoughtWorks University (TWU) assignment.
 
-2. Run 'git init' in the folder that was extracted from the downloaded .zip file, in order to
- initialize local repository.
+For this assignment, you will be required to practice the concepts you have learned in previous learning pathways in
+order to development a new system for the Bangalore Public Library called Biblioteca.
 
-3. Make a local commit.
-    $ git add -A
-    $ git commit -m “Initial commit”
+Goals:
 
-(Dont forget to add the hidden .idea folder, as it will make opening your project in Intellij easier.)
-
-4. After you are done with the local commit, you can share your code with "The World" by pushing it to your
- GitHub repository.
-    $ git remote add origin https://github.com/<YOUR-GITHUB-USERNAME>/twu-biblioteca-<YOURNAME>
-    $ git push origin master
-
-Instructions to open your code in Intellij
-==========================================
-1. Go to File -> Open (or Open Project)
-2. Select the directory containing the code
-DONE !
-
+Use TDD approach to write code
+Use Object-Oriented Programming principles in writing well-structured code
+Use small commits during development
+Make Git commits in command line
+Push/pull code through command line
+Use SQL to execute commonly used database queries
+Receive and respond to feedback, and apply changes to code
